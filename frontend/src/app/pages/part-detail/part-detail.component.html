@@ -1,0 +1,82 @@
+<nav class="crumbs">
+  <a routerLink="/">Collection</a>
+  <span>/</span>
+  <span>{{ part()?.category ?? '…' }}</span>
+</nav>
+
+@if (resource.isLoading()) {
+  <div class="detail">
+    <div class="skeleton" style="aspect-ratio: 4 / 3"></div>
+    <div class="skeleton" style="height: 320px"></div>
+  </div>
+} @else if (resource.error() || !part()) {
+  <div class="panel state">
+    This design could not be found.
+    <div><a class="btn btn--sm" style="margin-top: 10px" routerLink="/">Back to collection</a></div>
+  </div>
+} @else {
+  @let p = part()!;
+  <article class="detail">
+    <div class="media-col">
+      <div class="media panel">
+        @if (p.imageUrl) {
+          <img [src]="p.imageUrl" [alt]="p.name" />
+        } @else {
+          <div class="noimg">No image</div>
+        }
+      </div>
+      @if (downloadUrl(); as url) {
+        <a class="btn btn--light download" [href]="url" download>
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path fill="currentColor" d="M11 3h2v9.6l3.3-3.3 1.4 1.4L12 16.4l-5.7-5.7 1.4-1.4 3.3 3.3V3ZM5 19h14v2H5v-2Z" />
+          </svg>
+          Download image
+        </a>
+      }
+    </div>
+
+    <div class="info">
+      <div class="info__meta">
+        <span class="badge">{{ p.category }}</span>
+        <span>SKU · {{ p.sku }}</span>
+      </div>
+      <h1>{{ p.name }}</h1>
+      <div class="brand">by <strong>{{ p.brand }}</strong></div>
+
+      <div class="pricebox">
+        <span class="price">{{ p.price | currency: 'INR' : 'symbol' : '1.0-0' }}</span>
+        @if (cats.isRental(p.category)) {
+          <span class="per">/ day</span>
+        } @else if (discount()) {
+          <span class="mrp">MRP {{ p.mrp | currency: 'INR' : 'symbol' : '1.0-0' }}</span>
+          <span class="off">{{ discount() }}% off</span>
+        }
+        <span class="kind">
+          <span class="badge" [class.badge--rent]="cats.isRental(p.category)">
+            {{ cats.isRental(p.category) ? 'Available for rent' : 'For sale' }}
+          </span>
+        </span>
+      </div>
+
+      @if (p.description) {
+        <p class="desc">{{ p.description }}</p>
+      }
+
+      @if ((p.specs | keyvalue).length) {
+        <h2>Details</h2>
+        <dl class="specs">
+          @for (s of p.specs | keyvalue: unordered; track s.key) {
+            <div><dt>{{ s.key }}</dt><dd>{{ s.value }}</dd></div>
+          }
+        </dl>
+      }
+
+      <div class="actions">
+        <a class="btn btn--light" routerLink="/">← Back to collection</a>
+        @if (auth.isAdmin()) {
+          <a class="btn" routerLink="/admin" [queryParams]="{ edit: p.id }">Edit design</a>
+        }
+      </div>
+    </div>
+  </article>
+}

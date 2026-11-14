@@ -1,0 +1,458 @@
+[
+  {
+    "_id": "765a60f459b947a4a5b6faa7d6ff9b6b",
+    "skuKey": "nck-kun-001",
+    "name": "Kundan Choker Necklace",
+    "sku": "NCK-KUN-001",
+    "category": "Necklaces",
+    "brand": "ZHAGARAM Royal",
+    "price": 2490.0,
+    "mrp": 3290.0,
+    "description": "Statement choker with kundan stones, ruby drops and pearl hangings in a matte gold finish.",
+    "specs": {
+      "Finish": "Matte gold",
+      "Stones": "Kundan, ruby, pearl",
+      "Closure": "Adjustable dori"
+    },
+    "imageUrl": "/api/images/289c3bfba3d24726bc12cef1cf710da6",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "ff7ddd831d794a7ca4e7c5563c0d7d1b",
+    "skuKey": "nck-tmp-002",
+    "name": "Temple Lakshmi Long Haram",
+    "sku": "NCK-TMP-002",
+    "category": "Necklaces",
+    "brand": "ZHAGARAM Temple",
+    "price": 3190.0,
+    "mrp": 3990.0,
+    "description": "Traditional temple-style long haram with Lakshmi coin motifs and emerald accents.",
+    "specs": {
+      "Length": "28 inches",
+      "Finish": "Antique gold",
+      "Base": "Brass alloy"
+    },
+    "imageUrl": "/api/images/4e04662b34e14b249758b4a71e364b6e",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "b91b1b07be7c47289acce05c0455aa02",
+    "skuKey": "nck-prl-003",
+    "name": "Pearl Layered Necklace",
+    "sku": "NCK-PRL-003",
+    "category": "Necklaces",
+    "brand": "ZHAGARAM Classic",
+    "price": 1290.0,
+    "mrp": 1590.0,
+    "description": "Three-layer faux pearl strand with a gold-tone clasp. Elegant for parties and receptions.",
+    "specs": {
+      "Layers": "3",
+      "Beads": "Faux pearl",
+      "Length": "16–20 inches"
+    },
+    "imageUrl": "/api/images/bef782525f7445c790e1bff5aad760fa",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "f0b9a7b0a9334d68ae41c2792ce2f947",
+    "skuKey": "ear-jhm-004",
+    "name": "Ruby Jhumka Earrings",
+    "sku": "EAR-JHM-004",
+    "category": "Earrings",
+    "brand": "ZHAGARAM Temple",
+    "price": 790.0,
+    "mrp": 990.0,
+    "description": "Bell-shaped jhumkas with ruby-red stones and tiny pearl drops.",
+    "specs": {
+      "Length": "2.2 inches",
+      "Back": "Push back",
+      "Weight": "Light"
+    },
+    "imageUrl": "/api/images/7caac53e3704440bbfac63b4dbe63a86",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "a0cca8c324de4939b39c0b66bbc2e895",
+    "skuKey": "ear-std-005",
+    "name": "American Diamond Studs",
+    "sku": "EAR-STD-005",
+    "category": "Earrings",
+    "brand": "ZHAGARAM Sparkle",
+    "price": 450.0,
+    "mrp": 599.0,
+    "description": "Brilliant-cut CZ studs in a rhodium finish for everyday sparkle.",
+    "specs": {
+      "Stone": "Cubic zirconia",
+      "Finish": "Rhodium",
+      "Size": "8 mm"
+    },
+    "imageUrl": "/api/images/90f28393ba9749d6a231d524df1a3a06",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "2c5c1aaac3b44b1eb784b38641b80cfe",
+    "skuKey": "rng-emr-006",
+    "name": "Emerald Cocktail Ring",
+    "sku": "RNG-EMR-006",
+    "category": "Rings",
+    "brand": "ZHAGARAM Sparkle",
+    "price": 590.0,
+    "mrp": 790.0,
+    "description": "Oval green stone surrounded by a halo of CZ. Adjustable band fits most sizes.",
+    "specs": {
+      "Stone": "Green glass, CZ",
+      "Band": "Adjustable",
+      "Finish": "Gold"
+    },
+    "imageUrl": "/api/images/407474c51a4c4855a08197baf76fe584",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "553d10e48d634b7aa5ac8228f9aa329f",
+    "skuKey": "rng-sol-007",
+    "name": "Rose Gold Solitaire Ring",
+    "sku": "RNG-SOL-007",
+    "category": "Rings",
+    "brand": "ZHAGARAM Classic",
+    "price": 399.0,
+    "mrp": 499.0,
+    "description": "Minimal single-stone ring in rose gold tone. Perfect for gifting.",
+    "specs": {
+      "Stone": "CZ solitaire",
+      "Finish": "Rose gold",
+      "Sizes": "6–9"
+    },
+    "imageUrl": "/api/images/3d8b9aa0a51547149c26e8fcda3e2989",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "7a73a7ab0016435eb6767cf722693428",
+    "skuKey": "bng-ant-008",
+    "name": "Antique Bangle Set (4 pcs)",
+    "sku": "BNG-ANT-008",
+    "category": "Bangles",
+    "brand": "ZHAGARAM Temple",
+    "price": 1490.0,
+    "mrp": 1890.0,
+    "description": "Set of four antique-finish bangles with ruby and emerald stone work.",
+    "specs": {
+      "Pieces": "4",
+      "Sizes": "2.4 / 2.6 / 2.8",
+      "Finish": "Antique gold"
+    },
+    "imageUrl": "/api/images/1eea26dda5c34c7998bc970a209c80b0",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "835f04c6b32b410e9ec470843e31bd7d",
+    "skuKey": "bng-kda-009",
+    "name": "Stone Kada Bangle",
+    "sku": "BNG-KDA-009",
+    "category": "Bangles",
+    "brand": "ZHAGARAM Royal",
+    "price": 990.0,
+    "mrp": 1290.0,
+    "description": "Broad openable kada studded with white stones and a centre ruby.",
+    "specs": {
+      "Type": "Openable kada",
+      "Width": "18 mm",
+      "Finish": "Gold"
+    },
+    "imageUrl": "/api/images/68eaf28a0a1b47d1bb116e97a0905bbb",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "902d7110f3f84bf084adfc8ddfede865",
+    "skuKey": "brc-tns-010",
+    "name": "CZ Tennis Bracelet",
+    "sku": "BRC-TNS-010",
+    "category": "Bracelets",
+    "brand": "ZHAGARAM Sparkle",
+    "price": 890.0,
+    "mrp": 1190.0,
+    "description": "Continuous line of sparkling CZ stones with a secure box clasp.",
+    "specs": {
+      "Length": "7 inches",
+      "Stone": "Cubic zirconia",
+      "Finish": "Rhodium"
+    },
+    "imageUrl": "/api/images/908e73780b424fba8fb91dba39fcc6c6",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "e562504b1d3a4a72a8e030793f1abff2",
+    "skuKey": "pnd-hrt-011",
+    "name": "Heart Pendant with Chain",
+    "sku": "PND-HRT-011",
+    "category": "Pendants",
+    "brand": "ZHAGARAM Classic",
+    "price": 549.0,
+    "mrp": 699.0,
+    "description": "Rose-gold heart pendant with a pink stone, on an 18-inch chain.",
+    "specs": {
+      "Chain": "18 inches",
+      "Stone": "Pink CZ",
+      "Finish": "Rose gold"
+    },
+    "imageUrl": "/api/images/4acdeaf011ba4b9aa956ea75c6b07f08",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "7e8a3207c4ec4d70a073e540c80ec433",
+    "skuKey": "pnd-gns-012",
+    "name": "Ganesha Temple Pendant",
+    "sku": "PND-GNS-012",
+    "category": "Pendants",
+    "brand": "ZHAGARAM Temple",
+    "price": 690.0,
+    "mrp": 890.0,
+    "description": "Intricately carved Ganesha pendant in antique gold with a ruby accent.",
+    "specs": {
+      "Size": "1.5 inches",
+      "Finish": "Antique gold",
+      "Chain": "Not included"
+    },
+    "imageUrl": "/api/images/23cbf0ea888742abaf96bdc1ebc8dd15",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "cb6a062705054dbabc98dfe550549861",
+    "skuKey": "ank-ghn-013",
+    "name": "Ghungroo Silver Anklets (Pair)",
+    "sku": "ANK-GHN-013",
+    "category": "Anklets",
+    "brand": "ZHAGARAM Oxidised",
+    "price": 650.0,
+    "mrp": 850.0,
+    "description": "Oxidised-silver-tone payal with tiny ghungroo bells that chime softly.",
+    "specs": {
+      "Pieces": "Pair",
+      "Length": "10.5 inches",
+      "Finish": "Oxidised silver"
+    },
+    "imageUrl": "/api/images/7901f124cb3e410bb6f20bb8e193996a",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "84a54af1bb1d4506bef10f4a37c990dd",
+    "skuKey": "nsp-flr-014",
+    "name": "Floral Nose Pin",
+    "sku": "NSP-FLR-014",
+    "category": "Nose Pins",
+    "brand": "ZHAGARAM Sparkle",
+    "price": 199.0,
+    "mrp": 249.0,
+    "description": "Tiny flower-shaped press nose pin with CZ petals. No piercing needed.",
+    "specs": {
+      "Type": "Press-on",
+      "Stone": "CZ",
+      "Finish": "Gold"
+    },
+    "imageUrl": "/api/images/3334ce920a2d4c3f9eec577b0e0e40b8",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "dd682cd056bb4b0da3ef88f67ce6a977",
+    "skuKey": "mng-blk-015",
+    "name": "Black Bead Mangalsutra",
+    "sku": "MNG-BLK-015",
+    "category": "Mangalsutra",
+    "brand": "ZHAGARAM Classic",
+    "price": 990.0,
+    "mrp": 1290.0,
+    "description": "Traditional double-strand black bead mangalsutra with a stone-set gold pendant.",
+    "specs": {
+      "Length": "24 inches",
+      "Beads": "Black glass",
+      "Pendant": "CZ, gold tone"
+    },
+    "imageUrl": "/api/images/ef8a6c2c66a1442097ab9d2f3ef7bbd0",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "bd083d708a224fb7b2b3baecdaf018bf",
+    "skuKey": "brd-set-016",
+    "name": "Bridal Necklace & Jhumka Set",
+    "sku": "BRD-SET-016",
+    "category": "Bridal Sets",
+    "brand": "ZHAGARAM Royal",
+    "price": 4990.0,
+    "mrp": 6490.0,
+    "description": "Grand bridal set: layered kundan necklace, matching jhumkas and maang tikka.",
+    "specs": {
+      "Includes": "Necklace, jhumkas, tikka",
+      "Finish": "Gold",
+      "Stones": "Kundan, ruby"
+    },
+    "imageUrl": "/api/images/b840141544aa4e3f93dc334c32dbe9ce",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "f3e4216df7054f6f8c19fcfade0e5df6",
+    "skuKey": "rnt-brd-017",
+    "name": "Bridal Jewellery Set (Rental)",
+    "sku": "RNT-BRD-017",
+    "category": "Rent",
+    "brand": "ZHAGARAM Royal",
+    "price": 1499.0,
+    "mrp": null,
+    "description": "Full bridal set for your big day: haram, choker, jhumkas, tikka and vanki. Price is per day.",
+    "specs": {
+      "Includes": "5 pieces",
+      "Deposit": "₹5,000",
+      "Minimum": "2 days"
+    },
+    "imageUrl": "/api/images/e2683526a20043bfa7eaab1807c761b0",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "6c05bb1198a64af382502a3c2d75c741",
+    "skuKey": "rnt-hrm-018",
+    "name": "Temple Haram Set (Rental)",
+    "sku": "RNT-HRM-018",
+    "category": "Rent",
+    "brand": "ZHAGARAM Temple",
+    "price": 899.0,
+    "mrp": null,
+    "description": "Long temple haram with matching earrings, ideal for dance performances and functions. Price is per day.",
+    "specs": {
+      "Includes": "Haram, earrings",
+      "Deposit": "₹3,000",
+      "Minimum": "1 day"
+    },
+    "imageUrl": "/api/images/7aa44ab19d6e42f8ac3899262fb013fa",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "b066a1ddb22349dcb0bf2a90e7e8ed17",
+    "skuKey": "rnt-ody-019",
+    "name": "Waist Belt Oddiyanam (Rental)",
+    "sku": "RNT-ODY-019",
+    "category": "Rent",
+    "brand": "ZHAGARAM Temple",
+    "price": 599.0,
+    "mrp": null,
+    "description": "Adjustable antique-gold waist belt with Lakshmi motif. Price is per day.",
+    "specs": {
+      "Size": "Adjustable 26–36 inches",
+      "Deposit": "₹2,000",
+      "Minimum": "1 day"
+    },
+    "imageUrl": "/api/images/75606a3f52b44e47bdecdc9ddcd87fe8",
+    "createdAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T07:22:17.098Z"
+    }
+  },
+  {
+    "_id": "42f78d263d83410ebbe485ba6c9c2577",
+    "skuKey": "test",
+    "name": "test",
+    "sku": "TEST",
+    "category": "Necklaces",
+    "brand": "test",
+    "price": 1000.0,
+    "mrp": null,
+    "description": "",
+    "specs": {},
+    "imageUrl": "/api/images/810af6158d32452a91acfec1819814fe",
+    "createdAt": {
+      "$date": "2026-11-14T08:31:32.144Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-14T08:31:32.144Z"
+    }
+  }
+]

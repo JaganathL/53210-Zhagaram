@@ -1,0 +1,112 @@
+[
+  {
+    "_id": "e496026d175140b2a6f71a8cefd95b12",
+    "name": "Necklaces",
+    "nameKey": "necklaces",
+    "rental": false,
+    "order": 0,
+    "createdAt": {
+      "$date": "2026-11-14T09:11:16.415Z"
+    }
+  },
+  {
+    "_id": "8da3d6437bdc4804886052412a16d9ea",
+    "name": "Earrings",
+    "nameKey": "earrings",
+    "rental": false,
+    "order": 1,
+    "createdAt": {
+      "$date": "2026-11-14T09:11:16.415Z"
+    }
+  },
+  {
+    "_id": "721d3e36e9614e33a4008d5e7f6400ba",
+    "name": "Rings",
+    "nameKey": "rings",
+    "rental": false,
+    "order": 2,
+    "createdAt": {
+      "$date": "2026-11-14T09:11:16.415Z"
+    }
+  },
+  {
+    "_id": "4912ed1d6e49487ea86dc541916057b1",
+    "name": "Bangles",
+    "nameKey": "bangles",
+    "rental": false,
+    "order": 3,
+    "createdAt": {
+      "$date": "2026-11-14T09:11:16.415Z"
+    }
+  },
+  {
+    "_id": "1af743664d0e4b0cbea54ceec43c2cbc",
+    "name": "Bracelets",
+    "nameKey": "bracelets",
+    "rental": false,
+    "order": 4,
+    "createdAt": {
+      "$date": "2026-11-14T09:11:16.415Z"
+    }
+  },
+  {
+    "_id": "c20e3ae2e0ed4e5281d675088fc511e6",
+    "name": "Pendants",
+    "nameKey": "pendants",
+    "rental": false,
+    "order": 5,
+    "createdAt": {
+      "$date": "2026-11-14T09:11:16.415Z"
+    }
+  },
+  {
+    "_id": "2bba36df7b6247f782d7a78545e94449",
+    "name": "Anklets",
+    "nameKey": "anklets",
+    "rental": false,
+    "order": 6,
+    "createdAt": {
+      "$date": "2026-11-14T09:11:16.415Z"
+    }
+  },
+  {
+    "_id": "474eed874a154ad1b0a502e4e5eb7d33",
+    "name": "Nose Pins",
+    "nameKey": "nose pins",
+    "rental": false,
+    "order": 7,
+    "createdAt": {
+      "$date": "2026-11-14T09:11:16.415Z"
+    }
+  },
+  {
+    "_id": "93795b1c35d34766aafdcb11a08211ac",
+    "name": "Mangalsutra",
+    "nameKey": "mangalsutra",
+    "rental": false,
+    "order": 8,
+    "createdAt": {
+      "$date": "2026-11-14T09:11:16.415Z"
+    }
+  },
+  {
+    "_id": "e68eddf5d3f64b258c3725447f7a49e8",
+    "name": "Bridal Sets",
+    "nameKey": "bridal sets",
+    "rental": false,
+    "order": 9,
+    "createdAt": {
+      "$date": "2026-11-14T09:11:16.415Z"
+    }
+  },
+  {
+    "_id": "88e3ec58736f4d4bbf4f7f6ba5f2ab9b",
+    "name": "Rent",
+    "nameKey": "rent",
+    "rental": true,
+    "order": 10,
+    "createdAt": {
+      "$date": "2026-11-14T09:11:16.415Z"
+    }
+  }
+]

@@ -1,0 +1,146 @@
+.crumbs {
+  display: flex;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 10px;
+
+  a:hover {
+    color: var(--emerald);
+  }
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.media-col {
+  position: sticky;
+  top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.media {
+  overflow: hidden;
+
+  img,
+  .noimg {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+}
+
+.download {
+  align-self: flex-start;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  h1 {
+    font-size: clamp(22px, 3vw, 30px);
+  }
+
+  h2 {
+    font-size: 16px;
+    margin-top: 6px;
+  }
+}
+
+.info__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.brand {
+  color: var(--muted);
+
+  strong {
+    color: var(--text);
+  }
+}
+
+.pricebox {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius);
+
+  .price {
+    font-size: 26px;
+    font-family: var(--font-head);
+  }
+
+  .kind {
+    margin-left: auto;
+  }
+}
+
+.desc {
+  margin: 0;
+  color: #3a433e;
+}
+
+.specs {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+
+  div {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  dt {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  dd {
+    margin: 0;
+    font-weight: 600;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+  .detail {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .media-col {
+    position: static;
+  }
+
+  .pricebox .price {
+    font-size: 22px;
+  }
+}

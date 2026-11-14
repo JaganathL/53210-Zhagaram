@@ -1,0 +1,15 @@
+# Python
+backend/.venv/
+__pycache__/
+.pytest_cache/
+backend/.env
+
+# Runtime data
+backend/data/
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Angular
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/

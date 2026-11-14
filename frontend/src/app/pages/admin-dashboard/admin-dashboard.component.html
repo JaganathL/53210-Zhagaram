@@ -1,0 +1,105 @@
+<div class="head">
+  <div>
+    <h1>Inventory</h1>
+    <p>Add, update or remove jewellery shown in the public collection.</p>
+  </div>
+  <div class="head__actions">
+    <button class="btn btn--light" type="button" (click)="managingCategories.set(true)">Categories</button>
+    <button class="btn" type="button" (click)="openNew()">+ Add jewellery</button>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><span>Total listings</span><strong>{{ stats().total }}</strong></div>
+  <div class="stat"><span>For sale</span><strong>{{ stats().sale }}</strong></div>
+  <div class="stat"><span>For rent</span><strong class="warn">{{ stats().rent }}</strong></div>
+  <div class="stat"><span>Categories</span><strong>{{ stats().categories }}</strong></div>
+</div>
+
+<div class="panel table-wrap">
+  <div class="table-tools">
+    <input
+      class="input"
+      type="search"
+      placeholder="Filter by name, SKU, brand…"
+      [value]="filter()"
+      (input)="filter.set($any($event.target).value)"
+      aria-label="Filter jewellery"
+    />
+  </div>
+
+  @if (resource.error()) {
+    <div class="state">
+      Failed to load jewellery.
+      <button class="btn btn--sm" (click)="resource.reload()">Retry</button>
+    </div>
+  } @else if (resource.isLoading() && !resource.value()) {
+    <div class="state">Loading…</div>
+  } @else if (items().length === 0) {
+    <div class="state">No jewellery found.</div>
+  } @else {
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Design</th>
+          <th>Category</th>
+          <th class="num">Price</th>
+          <th class="act">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (p of items(); track p.id) {
+          <tr>
+            <td class="part">
+              @if (p.imageUrl) {
+                <img [src]="p.imageUrl" [alt]="p.name" />
+              } @else {
+                <div class="noimg thumb">—</div>
+              }
+              <div>
+                <a [routerLink]="['/parts', p.id]" class="part__name">{{ p.name }}</a>
+                <small>{{ p.sku }} · {{ p.brand }}</small>
+              </div>
+            </td>
+            <td data-label="Category">{{ p.category }}</td>
+            <td class="num price" data-label="Price">
+              {{ p.price | currency: 'INR' : 'symbol' : '1.0-0' }}
+              @if (cats.isRental(p.category)) {
+                <span class="per">/ day</span>
+              }
+            </td>
+            <td class="act">
+              <button class="btn btn--light btn--sm" type="button" (click)="editing.set(p)">Edit</button>
+              <button class="btn btn--danger btn--sm" type="button" (click)="confirmDelete.set(p)">Delete</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>
+
+@if (editing() !== undefined) {
+  <app-part-form [part]="editing() ?? null" (saved)="onSaved($event.part, $event.isNew)" (closed)="editing.set(undefined)" />
+}
+
+@if (managingCategories()) {
+  <app-category-manager (closed)="managingCategories.set(false); resource.reload()" />
+}
+
+@if (confirmDelete(); as p) {
+  <div class="overlay" (click)="confirmDelete.set(null)">
+    <div class="panel dialog" role="alertdialog" aria-modal="true" (click)="$event.stopPropagation()">
+      <h2>Delete this design?</h2>
+      <p>
+        <strong>{{ p.name }}</strong> ({{ p.sku }}) will be permanently removed from the collection.
+      </p>
+      <div class="dialog__actions">
+        <button class="btn btn--light" type="button" (click)="confirmDelete.set(null)">Cancel</button>
+        <button class="btn btn--danger" type="button" [disabled]="deleting()" (click)="remove()">
+          {{ deleting() ? 'Deleting…' : 'Delete' }}
+        </button>
+      </div>
+    </div>
+  </div>
+}

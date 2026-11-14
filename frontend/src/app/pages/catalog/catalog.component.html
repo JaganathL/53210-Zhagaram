@@ -1,0 +1,95 @@
+<section class="hero">
+  <div>
+    <h1>Timeless designs, <em>crafted</em> to shine.</h1>
+    <p>Handpicked imitation & fashion jewellery for every celebration — buy or rent.</p>
+  </div>
+  <div class="hero__stat">
+    <strong>{{ items().length }}</strong>
+    <span>designs</span>
+  </div>
+</section>
+
+<section class="toolbar">
+  <div class="toolbar__row">
+    <label class="search">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+        <path fill="currentColor" d="M10 2a8 8 0 0 1 6.3 12.9l5.4 5.4-1.4 1.4-5.4-5.4A8 8 0 1 1 10 2Zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z" />
+      </svg>
+      <input
+        class="input"
+        type="search"
+        placeholder="Search jewellery, brand or SKU…"
+        [value]="search()"
+        (input)="search.set($any($event.target).value)"
+        aria-label="Search jewellery"
+      />
+    </label>
+    <select class="select sort" [value]="sort()" (change)="sort.set($any($event.target).value)" aria-label="Sort">
+      <option value="newest">Newest</option>
+      <option value="price_asc">Price: Low → High</option>
+      <option value="price_desc">Price: High → Low</option>
+      <option value="name">Name A–Z</option>
+    </select>
+  </div>
+  <div class="chips" role="tablist">
+    <button type="button" class="chip" [class.is-active]="category() === ''" (click)="category.set('')">All</button>
+    @for (c of cats.categories(); track c.id) {
+      <button type="button" class="chip" [class.is-active]="category() === c.name" (click)="category.set(c.name)">{{ c.name }}</button>
+    }
+  </div>
+</section>
+
+@if (resource.error()) {
+  <div class="panel state">
+    Could not load the collection. Please make sure the API is running.
+    <div><button class="btn btn--sm" style="margin-top: 10px" (click)="resource.reload()">Retry</button></div>
+  </div>
+} @else if (resource.isLoading() && !resource.value()) {
+  <div class="grid">
+    @for (s of skeletons; track $index) {
+      <div class="skeleton" style="height: 270px"></div>
+    }
+  </div>
+} @else if (items().length === 0) {
+  <div class="panel state">
+    No jewellery matches your filters.
+    <div><button class="btn btn--light btn--sm" style="margin-top: 10px" (click)="reset()">Clear filters</button></div>
+  </div>
+} @else {
+  <div class="grid" [class.is-refreshing]="resource.isLoading()">
+    @for (p of items(); track p.id; let i = $index) {
+      <a class="card" [routerLink]="['/parts', p.id]">
+        <div class="card__media">
+          @if (p.imageUrl) {
+            <img [src]="p.imageUrl" [alt]="p.name" [attr.loading]="i < 8 ? 'eager' : 'lazy'" />
+          } @else {
+            <div class="noimg">No image</div>
+          }
+          @if (discount(p)) {
+            <span class="card__off">-{{ discount(p) }}%</span>
+          }
+        </div>
+        <div class="card__body">
+          <div class="card__meta">
+            <span>{{ p.category }}</span>
+            <span>{{ p.brand }}</span>
+          </div>
+          <h3 class="card__title">{{ p.name }}</h3>
+          <div class="card__foot">
+            <div>
+              <span class="price">{{ p.price | currency: 'INR' : 'symbol' : '1.0-0' }}</span>
+              @if (cats.isRental(p.category)) {
+                <span class="per">/ day</span>
+              } @else if (discount(p)) {
+                <span class="mrp">{{ p.mrp | currency: 'INR' : 'symbol' : '1.0-0' }}</span>
+              }
+            </div>
+            <span class="badge" [class.badge--rent]="cats.isRental(p.category)">
+              {{ cats.isRental(p.category) ? 'For rent' : 'For sale' }}
+            </span>
+          </div>
+        </div>
+      </a>
+    }
+  </div>
+}
