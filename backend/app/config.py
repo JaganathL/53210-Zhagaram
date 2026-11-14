@@ -21,7 +21,7 @@ class Settings(BaseSettings):
     # "auto" uses MongoDB when MONGO_URI is set, otherwise the local JSON store.
     storage: Literal["auto", "mongo", "json"] = "auto"
     mongo_uri: str = ""
-    mongo_db: str = "zhagaram"
+    mongo_db: str = "zhagaram-jewellery"
     data_dir: Path = BASE_DIR / "data"
     # Pre-database layout, migrated automatically on first start.
     legacy_data_file: Path = BASE_DIR / "data" / "parts.json"

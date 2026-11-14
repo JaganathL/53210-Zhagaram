@@ -4,7 +4,7 @@
     python -m app.tools import [--dir ../mongo-export] [--replace]    # needs MONGO_URI
 
 Exported files are MongoDB Extended JSON arrays, so they also work with:
-    mongoimport --uri "$MONGO_URI" --db zhagaram --collection items --jsonArray --file items.json
+    mongoimport --uri "$MONGO_URI" --db zhagaram-jewellery --collection items --jsonArray --file items.json
 """
 
 import argparse
