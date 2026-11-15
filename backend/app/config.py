@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     cors_origins: list[str] = ["http://localhost:4200"]
 
     # "auto" uses MongoDB when MONGO_URI is set, otherwise the local JSON store.
-    storage: Literal["auto", "mongo", "json"] = "auto"
+    storage: Literal["auto", "mongo", "json"] = "mongo"
     mongo_uri: str = ""
     mongo_db: str = "zhagaram-jewellery"
     data_dir: Path = BASE_DIR / "data"
