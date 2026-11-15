@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     # Random per process unless configured: tokens are invalidated on restart.
     jwt_secret: str = secrets.token_urlsafe(48)
     jwt_expire_minutes: int = 120
-    cors_origins: list[str] = ["http://localhost:4200"]
+    cors_origins: list[str] = ["http://localhost:4200","https://53210-zhagaram-backend.vercel.app"]
 
     # "auto" uses MongoDB when MONGO_URI is set, otherwise the local JSON store.
     storage: Literal["auto", "mongo", "json"] = "mongo"

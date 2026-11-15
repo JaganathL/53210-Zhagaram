@@ -1,1 +1,1 @@
-{ "/api": { "target": "https://53210-zhagaram.vercel.app/", "secure": true } }
+{ "/api": { "target": "https://53210-zhagaram-backend.vercel.app", "secure": true } }
