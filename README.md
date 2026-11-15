@@ -34,12 +34,39 @@ npx ng serve
 
 | `MONGO_URI` | Storage used | Location |
 |-------------|--------------|----------|
-| set | **MongoDB** | collections `categories`, `items`, `images` in database `MONGO_DB` (default `zhagaram`) |
+| set | **MongoDB** | collections `categories`, `items`, `images` in database `MONGO_DB` (default `zhagaram-jewellery`) |
 | empty | JSON fallback | `backend/data/categories.json`, `items.json`, `images.json` (images stored as base64) |
 
 On startup, legacy MongoDB `products` are copied into `items` for the current API, and legacy category fields are normalized. The source product documents are retained.
 
 Images live in the database and are served from `GET /api/images/{id}`. There are no static image files. On first start with an empty database, the backend loads the seed catalogue: 11 categories, 19 designs, and their illustrations from `backend/app/seed_images/`.
+
+### Deploying the backend on Vercel
+
+Vercel does not use the local `backend/.env` file. Add `MONGO_URI` (a hosted MongoDB connection string), `MONGO_DB=zhagaram-jewellery`, and `STORAGE=mongo` to the Vercel project's environment variables, then redeploy. Do not use a `127.0.0.1` MongoDB URI on Vercel. The JSON file store is not persistent serverless storage. `/api/health` should report `"storage":"mongo"` after deployment.
+
+### Deploying the backend on Cloudflare
+
+The Cloudflare deployment uses [Containers](https://developers.cloudflare.com/containers/), so it runs the existing FastAPI app rather than requiring a rewrite as a Worker. Cloudflare Containers require a Workers Paid plan, and deploying the image requires Docker Desktop (or another Docker-compatible engine) to be running.
+
+The deployment files are `backend/Dockerfile`, `backend/wrangler.jsonc`, and `backend/cloudflare/src/index.js`. The Worker forwards API requests to the container on port 8000 and checks `/api/health` before forwarding traffic. The container uses MongoDB; it does not use the local JSON files.
+
+1. Make sure MongoDB Atlas is reachable from Cloudflare Containers, and update `CORS_ORIGINS` in `backend/wrangler.jsonc` to a JSON array containing the deployed frontend origin, for example `["https://your-site.pages.dev"]`.
+2. From `backend/`, log in and deploy the Worker:
+   ```powershell
+   npx wrangler login
+   npx wrangler deploy
+   ```
+3. Add the required Worker secrets when prompted:
+   ```powershell
+   npx wrangler secret put MONGO_URI
+   npx wrangler secret put JWT_SECRET
+   npx wrangler secret put ADMIN_PASSWORD
+   ```
+   `MONGO_URI` must be a hosted MongoDB connection string. The Worker passes these secrets to the container at startup.
+4. Test `https://zhagaram-api.<your-workers-subdomain>.workers.dev/api/health` and `/api/categories`. Health should report `"storage":"mongo"`. The first Container deployment may take several minutes to provision.
+
+The `frontend/proxy.conf.json` file is only used by the local Angular development server. For production, route the frontend's `/api` requests to this Worker (for example, through a custom domain or a frontend API base URL). Ensure the deployed frontend origin is included in `CORS_ORIGINS`.
 
 ### Connecting MongoDB later
 
@@ -48,9 +75,9 @@ Images live in the database and are served from `GET /api/images/{id}`. There ar
    - Run `.\.venv\Scripts\python -m app.tools import` from `backend/`. This reads the files in `mongo-export/` and creates indexes. Add `--replace` to overwrite a non-empty database.
    - Use `mongoimport` with the exported files:
      ```bash
-     mongoimport --uri "$MONGO_URI" --db zhagaram --collection categories --jsonArray --file mongo-export/categories.json
-     mongoimport --uri "$MONGO_URI" --db zhagaram --collection items      --jsonArray --file mongo-export/items.json
-     mongoimport --uri "$MONGO_URI" --db zhagaram --collection images     --jsonArray --file mongo-export/images.json
+     mongoimport --uri "$MONGO_URI" --db zhagaram-jewellery --collection categories --jsonArray --file mongo-export/categories.json
+     mongoimport --uri "$MONGO_URI" --db zhagaram-jewellery --collection items      --jsonArray --file mongo-export/items.json
+     mongoimport --uri "$MONGO_URI" --db zhagaram-jewellery --collection images     --jsonArray --file mongo-export/images.json
      ```
    - Skip importing. An empty MongoDB database is seeded automatically on first start.
 3. Restart the backend. `/api/health` should then report `"storage": "mongo"`.
