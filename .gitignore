@@ -2,7 +2,6 @@
 backend/.venv/
 __pycache__/
 .pytest_cache/
-backend/.env
 
 # Runtime data
 backend/data/
