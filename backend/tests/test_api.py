@@ -32,6 +32,10 @@ def make_settings(tmp_path) -> Settings:
     )
 
 
+def test_mongo_uri_is_not_baked_into_settings():
+    assert Settings(_env_file=None).mongo_uri == ""
+
+
 def make_store(kind: str, settings: Settings):
     return JsonStore(settings.data_dir) if kind == "json" else MongoStore(FakeDatabase())
 
